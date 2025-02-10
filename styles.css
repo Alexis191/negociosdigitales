@@ -1,0 +1,438 @@
+:root {
+    --azul-principal: #003976;
+    --amarrillo-principal: #FCC000;
+    --texto-principal: #403F3B;
+    --texto-secundario: #807D7E;
+    --botones-principal: #07508E;
+    --botones-secundario: #0065B0;
+    --fondo-primario: #F3F7FB;
+    --fondo-secundario: #F0F0F0;
+}
+
+/*Estilos Globales*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: var(--blanco-fondo);
+    color: #403F3B;
+    line-height: 1.6;
+}
+
+/*Menú Navegación*/
+header {
+    background-color: var(--azul-principal);
+    color: white;
+    padding: 15px;
+    text-align: center;
+} 
+  
+.logo {
+    max-width: 150px;
+    margin-bottom: 10px;
+}
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+}
+nav a:hover {
+    background-color: var(--amarrillo-principal);
+    border-radius: 15px;
+    color: var(--texto-principal);
+}
+
+/* Banner */
+.banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Sección principal */
+.main {
+    padding: 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.main h1,.main h2 {
+    color: #0056b3;
+}
+
+/* Sección de la directora */
+.directora-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.imagen-inicio img {
+    max-width: 250px;
+    border-radius: 25%;
+    border: 1px solid #0056b3;
+}
+
+.descripcion {
+    flex: 1;
+}
+
+.directora-titulo {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+/* Malla Académica */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background: #0056b3;
+    color: white;
+}
+
+/* Sección de oportunidades */
+.oportunidad {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.oportunidad img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+}
+
+.texto {
+    flex: 1;
+}
+
+
+/*Sección Docentes*/
+.contenedor {
+    display: grid;
+    grid-template-columns: repeat(4, 3fr);
+    gap: 20px;
+    padding: 20px;
+    background-color: #fff;
+
+}
+
+.docente-card {
+    border: 1px solid var(--fondo-primario);
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s;
+    background-color: var(--fondo-secundario);
+    height: 400px;
+    animation: fadeInUp 0.8s ease-in-out;
+}
+
+.docente-card:hover {
+    transform: scale(1.05);
+}
+
+.imagen-container {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 10px auto;
+}
+
+.imagen-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.docente-card h1 {
+    font-size: 1em;
+    margin: 10px 0;
+}
+
+ol {
+    text-align: left;
+    padding-left: 20px;
+    list-style: none;
+
+}
+
+/*Sección Materias*/
+.materias {
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 0.8s ease-in-out;
+}
+.materias h1 {
+    text-align: center;
+    color: #333;
+}
+.nivel {
+    background: #007bff;
+    color: white;
+    padding: 15px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+}
+.nivel i {
+    transition: transform 0.3s ease-in-out;
+}
+.materias-lista {
+    list-style: none;
+    padding: 0;
+    display: none;
+}
+.materias-lista li {
+    background: #f8f9fa;
+    padding: 10px;
+    border-left: 4px solid #007bff;
+    margin: 5px 0;
+    border-radius: 4px;
+}
+.materia-descripcion {
+    font-size: 14px;
+    color: #555;
+    margin-top: 5px;
+}
+
+
+/*Sección Eventos*/
+.evento {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); /* Responsivo: mínimo 300px, máximo 1fr */
+    grid-gap: 20px; /* Espacio entre las tarjetas */
+    padding: 20px; 
+}
+.evento-card {
+    border: 1px solid var(--fondo-primario);
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s;
+    background-color: var(--fondo-secundario);
+    height: 800px;
+    animation: fadeInUp 0.8s ease-in-out;
+}
+
+.evento-card:hover {
+    transform: scale(1.05);
+}
+
+.imagen-evento {
+    width: 500px;
+    height: 500px;
+    overflow: hidden;
+    margin: 10px auto;
+}
+
+.imagen-evento img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.evento-card h1 {
+    font-size: 1em;
+    margin: 10px 0;
+}
+
+
+
+/*Sección Galería*/
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsivo: mínimo 300px, máximo 1fr */
+    grid-gap: 20px; /* Espacio entre las tarjetas */
+    padding: 20px; /* Espacio alrededor de la galería */
+}
+
+.galeria-encabezado {
+    text-align: center; /* Centra el título y el párrafo */
+    margin-bottom: 20px; /* Espacio debajo del encabezado */
+    padding: 20px; /* Espacio alrededor del encabezado */
+    background-color: #f8f8f8; /* Un fondo sutil para destacar el encabezado (opcional) */
+}
+  
+.galeria-encabezado h1 {
+    font-size: 2em; /* Tamaño del título */
+    margin-bottom: 10px; /* Espacio debajo del título */
+}
+  
+.galeria-encabezado p {
+    font-size: 1.2em; /* Tamaño del párrafo */
+    color: #666; /* Color de texto más oscuro para el párrafo */
+}
+
+.galeria-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden; /* Evita que el contenido se desborde */
+    animation: fadeInUp 0.8s ease-in-out; /* Define la animación */
+}
+
+.imagen-galeria {
+    width: 100%; /* Ocupa todo el ancho de la tarjeta */
+    height: 0; /* Para mantener la proporción */
+    padding-bottom: 100%; /* Aspect ratio 1:1 (cuadrado) - Ajusta si necesitas otra proporción */
+    overflow: hidden;
+    position: relative; /* Necesario para el posicionamiento absoluto de la imagen */
+}
+
+.imagen-galeria img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute; /* Posiciona la imagen dentro del contenedor */
+    top: 0;
+    left: 0;
+}
+
+/*Pie de Página*/
+footer {
+    background-color: var(--azul-principal);
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+.footer-column {
+    text-align: center;
+}
+
+.copyright {
+    text-align: center;
+    background-color: var(--azul-principal);
+    color: white;
+    padding: 10px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+    font-size: 35px;
+}
+
+.fab {
+    color: #FCC000;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .directora-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .oportunidad {
+        flex-direction: column;
+        text-align: center;
+    }
+    footer {
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .logo {
+        margin-bottom: 0;
+    }
+    nav {
+        flex-direction: row;
+        gap: 15px;
+    }
+    nav a {
+        width: auto;
+    }
+    footer {
+        flex-direction: row;
+    }
+    .footer-column {
+        text-align: left;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .logo {
+        max-width: 200px;
+    }
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+/*Animaciones*/
+@keyframes fadeInUp {
+    from {
+        opacity: 0; /* Inicialmente, las tarjetas están ocultas */
+        transform: translateY(20px); /* Desplazamiento hacia abajo */
+    }
+    to {
+        opacity: 1; /* Las tarjetas se muestran */
+        transform: translateY(0); /* Vuelven a su posición original */
+    }
+}
